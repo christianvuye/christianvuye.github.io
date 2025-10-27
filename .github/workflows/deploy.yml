@@ -1,4 +1,4 @@
-name: Deploy Pelican Site
+name: Deploy
 
 on:
   push:
@@ -6,32 +6,14 @@ on:
       - master
 
 jobs:
-  deploy:
+  pages:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          python-version: '3.12'
-
-      - name: Install dependencies
-        run: |
-          pip install --upgrade pelican markdown
-
-      - name: Clean output
-        run: |
-          rm -rf output
-
-      - name: Build site
-        run: |
-          pelican content -o output -s pelicanconf.py
-
-      - name: Deploy
-        run: |
-          git config user.email "47785365+christianvuye@users.noreply.github.com"
-          git config user.name "Christian"
-          git add -A
-          git commit -m "build: generate site" || true
-          git push
+          path: 'output'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
