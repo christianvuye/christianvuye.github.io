@@ -1,6 +1,6 @@
 AUTHOR = "Christian"
 SITENAME = "Thinking Notes"
-SITEURL = "https://thinkingnotes.xyz"
+SITEURL = "https://christianvuye.github.io"
 PATH = "content"
 TIMEZONE = "Europe/Madrid"
 DEFAULT_LANG = "en"
