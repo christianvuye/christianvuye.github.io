@@ -22,7 +22,7 @@ jobs:
 
       - name: Build site
         run: |
-          python -m pelican content -s pelicanconf.py -o .
+          make publish
 
       - name: Deploy
         run: |
