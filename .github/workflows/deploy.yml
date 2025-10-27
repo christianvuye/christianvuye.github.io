@@ -18,11 +18,15 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install pelican markdown
+          pip install --upgrade pelican markdown
+
+      - name: Clean output
+        run: |
+          rm -rf output
 
       - name: Build site
         run: |
-          make publish
+          pelican content -o output -s pelicanconf.py
 
       - name: Deploy
         run: |
