@@ -1,0 +1,33 @@
+name: Deploy Pelican Site
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          pip install pelican markdown
+
+      - name: Build site
+        run: |
+          pelican content -o . -s pelicanconf.py
+
+      - name: Deploy
+        run: |
+          git config user.email "47785365+christianvuye@users.noreply.github.com"
+          git config user.name "Christian"
+          git add -A
+          git commit -m "build: generate site" || true
+          git push
