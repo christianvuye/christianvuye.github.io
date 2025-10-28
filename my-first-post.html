@@ -1,83 +1,132 @@
+
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="https://thinkingnotes.dev/theme/css/elegant.prod.9e9d5ce754.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="https://thinkingnotes.dev/theme/css/custom.css" media="screen">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
 
-        <link rel="dns-prefetch" href="//fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
 
-        <meta name="author" content="Christian" />
+    <link rel="stylesheet" type="text/css" href="https://thinkingnotes.dev/theme/stylesheet/style.min.css">
 
-        <meta property="og:type" content="article" />
-        <meta name="twitter:card" content="summary">
 
-<meta name="keywords" content="python, blogging, Technology, " />
-
-<meta property="og:title" content="TO DO: Coinbase API service post mortem (draft, notes) "/>
-<meta property="og:url" content="https://thinkingnotes.dev/my-first-post.html" />
-<meta property="og:description" content="A brief summary of your post" />
-<meta property="og:site_name" content="Thinking Notes" />
-<meta property="og:article:author" content="Christian" />
-<meta property="og:article:published_time" content="2025-10-27T23:00:00+01:00" />
-<meta name="twitter:title" content="TO DO: Coinbase API service post mortem (draft, notes) ">
-<meta name="twitter:description" content="A brief summary of your post">
-
-        <title>TO DO: Coinbase API service post mortem (draft, notes)  · Thinking Notes
-</title>
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="https://thinkingnotes.dev/theme/pygments/github.min.css">
 
 
 
-    </head>
-    <body>
-        <div id="content">
-            <div class="navbar navbar-static-top">
-                <div class="navbar-inner">
-                    <div class="container-fluid">
-                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </a>
-                        <a class="brand" href="https://thinkingnotes.dev/"><span class=site-name>Thinking Notes</span></a>
-                        <div class="nav-collapse collapse">
-                            <ul class="nav pull-right top-menu">
-                                <li >
-                                    <a href=
-                                       https://thinkingnotes.dev
-                                    >Home</a>
-                                </li>
-                                <li ><a href="https://thinkingnotes.dev/categories.html">Categories</a></li>
-                                <li ><a href="https://thinkingnotes.dev/tags.html">Tags</a></li>
-                                <li ><a href="https://thinkingnotes.dev/archives.html">Archives</a></li>
-                                <li><form class="navbar-search" action="https://thinkingnotes.dev/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container-fluid">
-                <div class="row-fluid">
-                    <div class="span1"></div>
-                    <div class="span10">
-<article itemscope>
-<div class="row-fluid">
-    <header class="page-header span10 offset2">
-        <h1>
-            <a href="https://thinkingnotes.dev/my-first-post.html">
-                TO DO: Coinbase API service post mortem (draft, notes)
-            </a>
-        </h1>
-    </header>
-</div>
+  <link rel="stylesheet" type="text/css" href="https://thinkingnotes.dev/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="https://thinkingnotes.dev/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="https://thinkingnotes.dev/theme/font-awesome/css/solid.css">
 
-<div class="row-fluid">
-        <div class="span8 offset2 article-content">
-            
-            <p>Your content here...</p>
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+<meta name="author" content="Christian" />
+<meta name="description" content="A brief summary of your post" />
+<meta name="keywords" content="python, blogging">
+
+
+  <meta property="og:site_name" content="Thinking Notes"/>
+  <meta property="og:title" content="TO DO: Coinbase API service post mortem (draft, notes)"/>
+  <meta property="og:description" content="A brief summary of your post"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="https://thinkingnotes.dev/my-first-post.html"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2025-10-27 23:00:00+01:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="https://thinkingnotes.dev/author/christian.html">
+  <meta property="article:section" content="Technology"/>
+  <meta property="article:tag" content="python"/>
+  <meta property="article:tag" content="blogging"/>
+  <meta property="og:image" content="">
+
+  <title>Thinking Notes &ndash; TO DO: Coinbase API service post mortem (draft, notes)</title>
+
+
+</head>
+<body class="light-theme">
+
+<aside>
+  <div>
+    <a href="https://thinkingnotes.dev/">
+      <img src="https://thinkingnotes.dev/theme/img/profile.png" alt="" title="">
+    </a>
+
+    <h1>
+      <a href="https://thinkingnotes.dev/"></a>
+    </h1>
+
+
+
+    <nav>
+      <ul class="list">
+
+
+
+          <li>
+            <a target="_self" href="https://getpelican.com/" >Pelican</a>
+          </li>
+          <li>
+            <a target="_self" href="https://www.python.org/" >Python.org</a>
+          </li>
+          <li>
+            <a target="_self" href="https://palletsprojects.com/p/jinja/" >Jinja2</a>
+          </li>
+          <li>
+            <a target="_self" href="#" >You can modify those links in your config file</a>
+          </li>
+      </ul>
+    </nav>
+
+    <ul class="social">
+      <li>
+        <a class="sc-You can add links in your config file"
+           href="#"
+           target="_blank">
+          <i class="fa-brands fa-You can add links in your config file"></i>
+        </a>
+      </li>
+      <li>
+        <a class="sc-Another social link"
+           href="#"
+           target="_blank">
+          <i class="fa-brands fa-Another social link"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+</aside>
+  <main>
+
+
+<article class="single">
+  <header>
+      
+    <h1 id="my-first-post">TO DO: Coinbase API service post mortem (draft, notes)</h1>
+    <p>
+      Posted on Mon 27 October 2025 in <a href="https://thinkingnotes.dev/category/technology.html">Technology</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>Your content here...</p>
 <p>THE FUNDAMENTAL PROBLEM: You Built a Production System for a Demo Assignment
 What the Assignment Actually Required (10-15 hours)
 Backend (4-5 hours):</p>
@@ -306,169 +355,119 @@ Day 1, Hour 3-8: Build ugly, working version of all 3-5 deliverables.
 Day 2, Hour 1-4: Deploy everything. Get URLs working.
 Day 2, Hour 5-8: Polish and document.</p>
 <p>Never start Day 2 without something deployed and viewable.</p>
-<p>Do you see it now? The brutal truth is you spent 50+ hours building 30% of the assignment (backend only) to 300% quality, instead of spending 15 hours building 100% of the assignment (backend + frontend + AWS) to 100% quality.</p>
+<h2>Do you see it now? The brutal truth is you spent 50+ hours building 30% of the assignment (backend only) to 300% quality, instead of spending 15 hours building 100% of the assignment (backend + frontend + AWS) to 100% quality.</h2>
+<p>Your instinct to:</p>
+<p>Research before building
+Understand patterns deeply
+Build proper architecture
+Think about scale and maintenance
+Enforce quality standards</p>
+<p>That instinct has served you incredibly well. It's why your systems run for years. It's why companies trust you with financial data.
+But take-homes are playing a different game. And your brain doesn't naturally switch gears.</p>
+<p>Why It's Hard For YOU Specifically
+You're an architecture-first thinker. When you see a problem, your brain immediately goes to:
+"How would this work at scale? What patterns should I use? What are the trade-offs? What happens when this grows?"
+That's systems thinking - it's a strength. But it makes time-boxed demos feel... wrong.
+When you tried to "just build something quick," your brain probably screamed:</p>
+<p>"But this won't scale!"
+"But I'm hardcoding things!"
+"But I should research the right pattern!"
+"But this isn't how I'd build it for real!"</p>
+<p>And you're right. It's NOT how you'd build it for real.
+That's the entire point.</p>
+<p>Practical Systems to Fight This
+Since willpower alone won't work, you need external constraints that override your instincts:
+1. The Alarm Clock Method
+Before you start ANY research or architectural decision:
+Set phone alarm for 30 minutes
+Tell yourself: "At 30 minutes, I commit to SOMETHING"
+When alarm goes off: Ship whatever you have, even if ugly
+Your perfectionism will fight for "just 10 more minutes." The alarm doesn't negotiate.
+2. The "Deploy First" Rule
+New ironclad rule: Nothing gets polished until it's deployed.
+bash# This is your new workflow:
+1. Get it working locally (ugly)
+2. Deploy to AWS (broken is fine)
+3. Get ONE thing working end-to-end
+4. THEN you can improve</p>
+<h1>NOT ALLOWED:</h1>
+<ol>
+<li>Perfect local architecture</li>
+<li>Research patterns</li>
+<li>Optimize performance</li>
+<li>Add tooling</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="gu">##</span># **3. The Checklist Override**
+
+When your brain wants to research or perfect something, pull out this checklist:
+</code></pre></div>
+
+<p>□ Do I have a deployed URL?
+□ Does the frontend show data?
+□ Does the refresh button work?
+□ Can someone experience my work in &lt; 5 minutes?</p>
+<p>If ANY are unchecked → DO THOSE FIRST
+Your brain can't argue with a checklist. It's objective.</p>
+<ol>
+<li>The Visibility Test
+Every 4 hours, ask: "Could I demo this to Albert right now?"
+If no → you're building the wrong thing.
+They need to SEE your work, not READ your code.</li>
+</ol>
+<p>The Mental Reframe
+Instead of fighting your instinct, redirect it:
+Your brain wants to build something you're proud of. Good!
+But redefine "proud":</p>
+<p>Proud in production: Clean architecture, scalability, 97% test coverage
+Proud in take-homes: Shipped end-to-end in time, demonstrated full-stack thinking, working demo they can touch</p>
+<p>Both are valid. You just need to recognize which game you're playing.</p>
+<p>The Hard Truth About Extensions
+You asked for 48-72 hours. But here's what will probably happen:
+You'll use that time to... keep perfecting the backend. Because that's what feels comfortable.
+If you get the extension:</p>
+<p>SET THE ALARM FOR 8 HOURS TOTAL WORK
+Spend 3 hours deploying current backend (even if broken)
+Spend 3 hours building ugly React frontend
+Spend 2 hours on documentation
+SUBMIT WHATEVER YOU HAVE</p>
+<p>Don't let yourself spend the extra time on tooling, research, or polish.</p>
+<p>This Is Learnable
+You're not broken. You're just applying a production skillset to a demo context.
+Some engineers are naturally good at "quick and dirty." You're not one of them.
+That's fine. You're good at building things that LAST. That's rarer and more valuable.
+You just need to develop the muscle for "speed over perfection" as a separate skill.
+Like learning to speak a second language. Your native language (careful architecture) is still there. You're just learning when to code-switch.</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="https://thinkingnotes.dev/tag/python.html">python</a>
+      <a href="https://thinkingnotes.dev/tag/blogging.html">blogging</a>
+    </p>
+  </div>
 
 
-             
- 
-            
-            
-            
 
 
 
 
 
-
-
-            <hr/>
-        </div>
-        <section id="article-sidebar" class="span2">
-            <h4>Published</h4>
-            <time itemprop="dateCreated" datetime="2025-10-27T23:00:00+01:00">Mon 27 October 2025</time>
-            <h4>Category</h4>
-            <a class="category-link" href="https://thinkingnotes.dev/categories.html#technology-ref">Technology</a>
-            <h4>Tags</h4>
-            <ul class="list-of-tags tags-in-article">
-                <li><a href="https://thinkingnotes.dev/tags.html#blogging-ref">blogging
-                    <span class="superscript">1</span>
-</a></li>
-                <li><a href="https://thinkingnotes.dev/tags.html#python-ref">python
-                    <span class="superscript">1</span>
-</a></li>
-            </ul>
-<h4>Contact</h4>
-<div id="sidebar-social-link">
-</div>
-            
-
-
-
-
-
-            
-
-
-
-
-
-        </section>
-</div>
 </article>
-<!-- Root element of PhotoSwipe. Must have class pswp. -->
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
-    <!-- Background of PhotoSwipe.
-         It's a separate element as animating opacity is faster than rgba(). -->
-    <div class="pswp__bg"></div>
-
-    <!-- Slides wrapper with overflow:hidden. -->
-    <div class="pswp__scroll-wrap">
-
-        <!-- Container that holds slides.
-            PhotoSwipe keeps only 3 of them in the DOM to save memory.
-            Don't modify these 3 pswp__item elements, data is added later on. -->
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-        </div>
-
-        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-        <div class="pswp__ui pswp__ui--hidden">
-
-            <div class="pswp__top-bar">
-
-                <!--  Controls are self-explanatory. Order can be changed. -->
-
-                <div class="pswp__counter"></div>
-
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-
-                <button class="pswp__button pswp__button--share" title="Share"></button>
-
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-
-                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-
-                <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
-                <!-- element will get class pswp__preloader--active when preloader is running -->
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                      <div class="pswp__preloader__cut">
-                        <div class="pswp__preloader__donut"></div>
-                      </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div>
-            </div>
-
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-            </button>
-
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-            </button>
-
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
-
-        </div>
-
-    </div>
-
-</div>                    </div>
-                    <div class="span1"></div>
-                </div>
-            </div>
-        </div>
 <footer>
+<p>&copy;  </p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+</p></footer>  </main>
 
-
-
-
-    <div id="fpowered">
-        Powered by: <a href="http://getpelican.com/" title="Pelican Home Page" target="_blank" rel="nofollow noopener noreferrer">Pelican</a>
-        Theme: <a href="https://elegant.oncrashreboot.com/" title="Theme Elegant Home Page" target="_blank" rel="nofollow noopener noreferrer">Elegant</a>
-    </div>
-</footer>            <script src="//code.jquery.com/jquery.min.js"></script>
-        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-        <script src="https://thinkingnotes.dev/theme/js/elegant.prod.9e9d5ce754.js"></script>
-        <script>
-            function validateForm(query)
-            {
-                return (query.length > 0);
-            }
-        </script>
-
-    <script>
-    (function () {
-        if (window.location.hash.match(/^#comment-\d+$/)) {
-            $('#comment_thread').collapse('show');
-        }
-    })();
-    window.onhashchange=function(){
-        if (window.location.hash.match(/^#comment-\d+$/))
-            window.location.reload(true);
-    }
-    $('#comment_thread').on('shown', function () {
-        var link = document.getElementById('comment-accordion-toggle');
-        var old_innerHTML = link.innerHTML;
-        $(link).fadeOut(200, function() {
-            $(this).text('Click here to hide comments').fadeIn(200);
-        });
-        $('#comment_thread').on('hidden', function () {
-            $(link).fadeOut(200, function() {
-                $(this).text(old_innerHTML).fadeIn(200);
-            });
-        })
-    })
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Thinking Notes ",
+  "url" : "https://thinkingnotes.dev",
+  "image": "",
+  "description": ""
+}
 </script>
-
-    </body>
-    <!-- Theme: Elegant built for Pelican
-        License : MIT -->
+</body>
 </html>

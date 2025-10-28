@@ -6,7 +6,7 @@ TIMEZONE = "Europe/Madrid"
 DEFAULT_LANG = "en"
 
 # Theme
-THEME = "themes/elegant"
+THEME = "themes/Flex"
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
